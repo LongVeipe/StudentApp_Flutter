@@ -68,10 +68,10 @@ class Question {
 }
 
 class Answers {
-  String? identifier;
-  String? answer;
+  String identifier;
+  String answer;
 
-  Answers({this.identifier, this.answer});
+  Answers({required this.identifier, required this.answer});
 
   Answers.fromJson(Map<String, dynamic> json)
       : identifier = json['identifier'],
