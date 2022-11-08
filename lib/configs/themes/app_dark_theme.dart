@@ -1,4 +1,15 @@
 import 'package:flutter/material.dart';
-
-const Color primaryDarkColorDark = Color(0xFF2e3c62);
-const Color primaryColorDark = Color(0xFF99ace1);
+import 'package:student_app/configs/themes/app_colors.dart';
+import 'package:student_app/configs/themes/sub_theme_data_mixin.dart';
+class DarkTheme with SubThemeData {
+  ThemeData buildSystemDarkTheme(){
+    final ThemeData systemDarkTheme = ThemeData.dark();
+    return systemDarkTheme.copyWith(
+      textTheme: getTextTheme().apply(
+        bodyColor: mainTextColorDark,
+        displayColor: mainTextColorDark,
+      ),
+      iconTheme: getIconTheme()
+    );
+  }
+}
