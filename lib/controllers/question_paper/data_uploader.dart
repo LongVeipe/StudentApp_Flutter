@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+// ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
 import 'package:student_app/firebase_ref/loading_status.dart';
 import 'package:student_app/firebase_ref/references.dart';

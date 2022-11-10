@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:student_app/configs/themes/app_colors.dart';
 import 'package:student_app/widgets/app_circle_button.dart';
+// ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
 
 class AppIntroductionScreen extends StatelessWidget {
@@ -35,7 +36,9 @@ class AppIntroductionScreen extends StatelessWidget {
               height: 40,
             ),
             AppCircleButton(
-              onTap: () => null,
+              onTap: () {
+                Get.offAllNamed("/home");
+              },
               child: const Icon(
                 Icons.arrow_forward,
                 size: 35,

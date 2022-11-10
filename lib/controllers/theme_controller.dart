@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
 import 'package:student_app/configs/themes/app_dark_theme.dart';
 import 'package:student_app/configs/themes/app_light_theme.dart';

@@ -1,3 +1,4 @@
+// ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
 import 'package:student_app/controllers/auth_controller.dart';
 import 'package:student_app/controllers/theme_controller.dart';
