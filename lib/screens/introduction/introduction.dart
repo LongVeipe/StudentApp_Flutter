@@ -12,7 +12,7 @@ class AppIntroductionScreen extends StatelessWidget {
     return Scaffold(
       body: Container(
         alignment: Alignment.center,
-        decoration: BoxDecoration(gradient: mainGradient(context)),
+        decoration: BoxDecoration(gradient: mainGradient()),
         padding: EdgeInsets.symmetric(horizontal: Get.width * 0.2),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
