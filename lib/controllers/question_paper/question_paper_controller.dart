@@ -1,6 +1,7 @@
 // ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:student_app/controllers/auth_controller.dart';
 import 'package:student_app/firebase_ref/references.dart';
 import 'package:student_app/models/question_paper_model.dart';
 import 'package:student_app/services/firebase_storage_service.dart';
@@ -32,6 +33,21 @@ class QuestionPaperController extends GetxController {
       allPapers.assignAll(paperList);
     } catch (e) {
       print(e);
+    }
+  }
+
+  void navigateToQuestions({required QuestionPaperModel paper, bool tryAgain = false}){
+    AuthController authController = Get.find();
+    if(authController.isLoggedIn()){
+      if(tryAgain){
+        Get.back();
+      }
+      else{
+
+      }
+    }
+    else{
+      authController.showLoginAlertDialogue();
     }
   }
 }
