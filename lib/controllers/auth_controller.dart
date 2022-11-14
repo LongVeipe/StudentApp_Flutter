@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:student_app/firebase_ref/references.dart';
+import 'package:student_app/screens/home/home_screen.dart';
 import 'package:student_app/screens/login/login_screen.dart';
 import 'package:student_app/widgets/dialogs/dialogue_widget.dart';
 
@@ -47,11 +48,13 @@ class AuthController extends GetxController {
   }
 
   saveUser(GoogleSignInAccount account) {
-    userRF.doc(account.email).set({
-      "email": account.email,
-      "name": account.displayName,
-      "photoUrl": account.photoUrl,
-    });
+    userRF
+        .doc(account.email)
+        .set({
+          "email": account.email,
+          "name": account.displayName,
+          "photoUrl": account.photoUrl,
+        });
   }
 
   void navigateToIntroduction() {
@@ -65,11 +68,28 @@ class AuthController extends GetxController {
     }), barrierDismissible: true);
   }
 
-  void navigateToLoginScreen(){
+  void navigateToLoginScreen() {
     Get.toNamed(LoginScreen.routerName);
   }
 
+  void navigateToHomeScreen(){
+    Get.offAllNamed(HomeScreen.routerName);
+  }
   bool isLoggedIn() {
     return _auth.currentUser != null;
+  }
+
+  User? getUser(){
+    _user.value = _auth.currentUser;
+    return _user.value;
+  }
+
+  Future<void> signOut() async{
+    try{
+      await _auth.signOut();
+      navigateToHomeScreen();
+    } on FirebaseAuthException catch(e){
+      print("signOutError: $e");
+    }
   }
 }

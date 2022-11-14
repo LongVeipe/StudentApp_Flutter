@@ -17,6 +17,7 @@ import 'package:student_app/widgets/content_area.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
+  static const String routerName = "/home";
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -32,7 +33,8 @@ class _HomeScreenState extends State<HomeScreen> {
         showShadow: true,
         angle: 0,
         style: DrawerStyle.Style7,
-        slideWidth: MediaQuery.of(context).size.width*0.6,
+        slideWidth: MediaQuery.of(context).size.width*0.5,
+        mainScreenScale: 0.4,
         controller: myZoomDrawerController.zoomDrawerController,
         menuScreen: const MenuScreen(),
         mainScreen: Container(
